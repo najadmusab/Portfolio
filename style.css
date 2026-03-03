@@ -1364,8 +1364,14 @@ section {
     }
 
     .hero-visual {
-        order: -1;
+        order: 2;   /* ✅ Keep stats BELOW content */
+        margin-top: 40px;
     }
+
+    .hero-content {
+        order: 1;
+    }
+}
 
     .about-grid,
     .contact-grid {
@@ -1445,4 +1451,242 @@ section {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+}
+/* =====================================
+   ✅ COMPLETE MOBILE PORTFOLIO FIX
+   Paste at END of style.css
+===================================== */
+
+@media (max-width:768px){
+
+/* ---------- GLOBAL ---------- */
+
+body{
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+section{
+    padding:70px 0;
+}
+
+.container{
+    padding:0 18px;
+}
+
+.section-header{
+    margin-bottom:40px;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+
+/* ---------- HERO SECTION ---------- */
+
+.hero{
+    min-height:auto;
+    padding:120px 0 60px;
+}
+
+.hero-container{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+}
+
+.hero-title{
+    align-items:center;
+}
+
+.title-name{
+    font-size:38px;
+}
+
+.title-role{
+    font-size:18px;
+}
+
+.hero-description{
+    font-size:15px;
+    margin:auto;
+}
+
+.hero-social{
+    justify-content:center;
+}
+
+.hero-cta{
+    flex-direction:column;
+    gap:15px;
+}
+
+.visual-card{
+    padding:20px;
+}
+
+
+/* ---------- ABOUT SECTION ---------- */
+
+.about-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+    text-align:center;
+}
+
+.feature-item{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.feature-item:hover{
+    transform:none;
+}
+
+.education-box{
+    flex-direction:column;
+    text-align:center;
+}
+
+
+/* ---------- STATS ---------- */
+
+.stats-grid{
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.stat-box{
+    padding:15px;
+}
+
+
+/* ---------- PROJECTS ---------- */
+
+.projects-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+}
+
+.project-card{
+    padding:20px;
+    gap:20px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+.project-title{
+    font-size:22px;
+}
+
+.project-description{
+    font-size:14px;
+}
+
+.project-number{
+    font-size:60px;
+    opacity:0.08;
+}
+
+.project-links{
+    flex-direction:column;
+    gap:10px;
+}
+
+
+/* ---------- SERVICES ---------- */
+
+.services-grid{
+    grid-template-columns:1fr;
+}
+
+.service-card{
+    padding:25px 20px;
+    text-align:center;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+.service-icon{
+    margin:auto;
+}
+
+.service-card ul{
+    text-align:left;
+}
+
+
+/* ---------- SKILLS ---------- */
+
+.skill-category{
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.contact-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.contact-item{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.contact-icon{
+    margin-bottom:10px;
+}
+
+.contact-form{
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+
+/* ---------- NAVBAR MOBILE ---------- */
+
+.nav-menu{
+    position:fixed;
+    top:70px;
+    left:-100%;
+    width:100%;
+    flex-direction:column;
+    padding:30px;
+    transition:0.4s;
+}
+
+.nav-menu.active{
+    left:0;
+}
+
+.nav-link{
+    padding:15px 0;
+    font-size:18px;
+}
+
+}
+
+
+/* ---------- REMOVE HOVER EFFECTS ON MOBILE ---------- */
+
+@media (hover:none){
+
+.project-card:hover,
+.service-card:hover,
+.skill-category:hover,
+.feature-item:hover{
+    transform:none;
+}
+
 }
